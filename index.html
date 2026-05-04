@@ -3,59 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Моє Резюме</title>
+    <title>Резюме — Лабораторна №4</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="dark-theme"> <div class="theme-controls">
+        <button id="theme-toggle" class="btn-github">Змінити тему</button>
+    </div>
 
-    <header>
-        <h1>Рябець Даниїл </h1>
-        <p>Junior </p>
-    </header>
+    <main class="resume-container">
+        <header class="header">
+            <div class="header-left">
+                <h1>Рябець Даниїл</h1>
+                <p class="subtitle">Junior Developer</p>
+            </div>
+            <div class="header-right">
+                <img src="danyil.jpg" alt="Фотографії немає" class="profile-photo">
+            </div>
+        </header>
 
-    <main>
-        <section>
+        <section class="contact-info">
             <h2>Контактна інформація</h2>
-            <ul>
+            <ul class="flex-list">
                 <li>Email: <a href="mailto:rbcdan01@gmail.com">rbcdan01@gmail.com</a></li>
-                <li>Телефон: <a href="tel:+380984461360">+380 98 446 13 60</a></li>
-                <li>GitHub: <a href="" target="_blank">Мій профіль</a></li>
+                <li>Тел: <a href="tel:+380984461360">+380 98 446 13 60</a></li>
+                <li>GitHub: <a href="https://github.com/danyilriabetskb2024-lang" target="_blank">Мій профіль</a></li>
             </ul>
         </section>
 
-        <section>
-            <h2>Про себе</h2>
-            <p>Я студент Львівської Політехніки, захоплююсь програмування, пишу ігри на двигуні GODOT, також поєдню з навчанням роботу, прауюю на фрілансі та таксую у ввільний час.</p>
-        </section>
+        <div class="main-content-wrapper">
+            <section class="col">
+                <h2>Про себе</h2>
+                <p>Я студент Львівської Політехніки, захоплююсь програмуванням, пишу ігри на GODOT та працюю на фрілансі.</p>
+            </section>
 
-        <section>
-            <h2>Освіта</h2>
-            <table border="1">
-                <tr>
-                    <th>Навчальний заклад</th>
-                    <th>Спеціальність</th>
-                    <th>Роки</th>
-                </tr>
-                <tr>
-                    <td>НЛьвівська Політехніка</td>
-                    <td>Кібербезпека</td>
-                    <td>2024-2028</td>
-                </tr>
-            </table>
-        </section>
+            <section class="col">
+                <h2>Навички</h2>
+                <ul class="skills-list">
+                    <li><span class="skill-dot"></span> HTML5 / CSS3</li>
+                    <li><span class="skill-dot"></span> JavaScript / Git</li>
+                    <li><span class="skill-dot"></span> English (B1)</li>
+                </ul>
+            </section>
 
-        <section>
-            <h2>Навички</h2>
-            <ul>
-                <li><strong>HTML5</strong> (Семантична розмітка)</li>
-                <li><strong>Git</strong> (Керування версіями)</li>
-                <li>Англійська мова (B1)</li>
-            </ul>
+            <section class="col">
+                <h2>Освіта</h2>
+                <p><strong>Львівська Політехніка</strong><br>Кібербезпека<br>2024-2028</p>
+            </section>
+        </div>
+
+        <section class="full-width">
+            <h2>Відгуки роботодавців (Dynamic API)</h2>
+            <div id="comments-container">Завантаження...</div>
         </section>
+        
+        <footer class="footer">
+            <p>© 2026 Рябець Даниїл.</p>
+            <div id="browser-info" style="margin-top: 10px; font-style: italic; color: #8b949e;"></div>
+        </footer>
     </main>
 
-    <footer>
-        <p>© 2026 Рябець Даниїл. Створено в рамках Лабораторної роботи №2.</p>
-    </footer>
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Зворотній зв'язок</h2>
+            <p>Ви на сайті вже більше хвилини. Маєте питання?</p>
+            <form action="https://formspree.io/f/xbdpqkjk" method="POST" class="github-form">
+                <input type="text" name="name" placeholder="Ваше ім'я" required>
+                <input type="email" name="email" placeholder="Ваш Email" required>
+                <input type="tel" name="phone" placeholder="Номер телефону" required>
+                <textarea name="message" placeholder="Повідомлення" rows="4"></textarea>
+                <button type="submit" class="btn-github green">Відправити</button>
+            </form>
+        </div>
+    </div>
 
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,58 @@
+/* --- ОСНОВНІ КОЛЬОРИ (GitHub Dark) --- */
+:root {
+    --bg-color: #0d1117;
+    --card-bg: #161b22;
+    --text-color: #c9d1d9;
+    --title-color: #f0f6fc;
+    --border-color: #30363d;
+    --accent-color: #E07D10;
+    --link-color: #58a6ff;
+}
+
+/* --- СВІТЛА ТЕМА (Пункт 4 у лабі) --- */
+body.light-theme {
+    --bg-color: #ffffff;
+    --card-bg: #f6f8fa;
+    --text-color: #24292f;
+    --title-color: #1b1f24;
+    --border-color: #d0d7de;
+    --accent-color: #d29922;
+    --link-color: #0969da;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: -apple-system, sans-serif;
+    margin: 0; transition: 0.3s;
+}
+
+.resume-container { max-width: 900px; margin: 20px auto; padding: 20px; }
+
+/* Шапка та лінії розділення */
+.header { display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--accent-color); padding-bottom: 20px; }
+.profile-photo { width: 120px; height: 120px; border-radius: 50%; border: 3px solid var(--accent-color); object-fit: cover; }
+
+.contact-info, .main-content-wrapper, .full-width { 
+    border-bottom: 2px solid var(--border-color); padding: 20px 0; 
+}
+
+/* Колонки */
+.main-content-wrapper { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+/* Кнопки */
+.theme-controls { position: fixed; top: 20px; right: 20px; z-index: 100; }
+.btn-github { background: var(--card-bg); color: var(--text-color); border: 1px solid var(--border-color); padding: 5px 15px; border-radius: 6px; cursor: pointer; }
+.btn-github.green { background: #238636; color: white; width: 100%; margin-top: 10px; }
+
+/* Модальне вікно */
+.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); }
+.modal-content { background: var(--card-bg); margin: 10% auto; padding: 25px; border: 1px solid var(--border-color); width: 320px; border-radius: 10px; position: relative; }
+.close-modal { position: absolute; right: 15px; top: 10px; font-size: 24px; cursor: pointer; }
+
+/* Форма */
+.github-form input, .github-form textarea { width: 100%; margin-bottom: 10px; background: var(--bg-color); border: 1px solid var(--border-color); color: var(--text-color); padding: 8px; border-radius: 5px; box-sizing: border-box; }
+
+h1, h2 { color: var(--title-color); text-transform: uppercase; }
+a { color: var(--link-color); text-decoration: none; }
+.skill-dot { height: 8px; width: 8px; background: #238636; border-radius: 50%; display: inline-block; margin-right: 5px; }
